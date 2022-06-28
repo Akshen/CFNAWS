@@ -6,3 +6,15 @@ Resources:
       AvailabilityZone: ap-south-1a
       ImageId: ami-08df646e18b182346
       InstanceType: t2.micro
+      SecurityGroups:
+      - !Ref ServerSecurityGroup
+
+  ServerSecurtiyGroup:
+    Type: AWS::EC2::SecurtiyGroup
+    Properties:
+      GroupDescription: Controls connection
+      SecurityGroupEgress:
+      - IpProtocol: -1
+        FromPort: -1
+        ToPort: -1
+        CidrIp: 0.0.0.0/0
