@@ -7,14 +7,14 @@ Resources:
       ImageId: ami-08df646e18b182346
       InstanceType: t2.micro
       SecurityGroups:
-       - !Ref ServerSecurityGroup
+        - !Ref ServerSecurityGroup
 
-  ServerSecurtiyGroup:
-    Type: AWS::EC2::SecurtiyGroup
+  ServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Controls connection
       SecurityGroupEgress:
-       - IpProtocol: '-1'
-         FromPort: ''
-         ToPort: ''
-         CidrIp: 0.0.0.0/0
+        - IpProtocol: '-1'
+          FromPort: ''
+          ToPort: ''
+          CidrIp: 0.0.0.0/0
